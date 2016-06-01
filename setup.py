@@ -5,19 +5,19 @@ from setuptools import setup
 
 
 setup(
-    name     = 'swissdict',
-    version  = '0.0.1',
-    packages = ['swissdict'],
-    requires = ['python (>= 2.7)'],
-    description  = 'implementation of a multifunctional dict',
-    long_description = open('README.rst').read(),
-    author       = 'Vasiliy Sinyurin',
-    author_email = 'vasiliy@sinyur.in',
-    url          = 'https://github.com/war1or/swissdict',
-    download_url = 'https://github.com/war1or/swissdict/tarball/master',
-    license      = 'MIT License',
-    keywords     = 'dict',
-    classifiers  = [
+    name='swissdict',
+    version='0.0.1',
+    packages=['swissdict'],
+    requires=['python (>= 2.7)'],
+    description='implementation of a multifunctional dict',
+    long_description=open('README.rst').read(),
+    author='Vasiliy Sinyurin',
+    author_email='vasiliy@sinyur.in',
+    url='https://github.com/war1or/swissdict',
+    download_url='https://github.com/war1or/swissdict/tarball/master',
+    license='MIT License',
+    keywords='dict',
+    classifiers=[
         'Environment :: Console',
         'Intended Audience :: Developers',
         'Development Status :: 4 - Beta',
