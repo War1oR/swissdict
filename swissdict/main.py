@@ -3,28 +3,6 @@ __date__ = '01.06.16'
 
 
 class Dict(dict):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._last_key = None
-
-    def __missing__(self, key):
-        value = self[key] = type(self)()
-        self[key]._last_key = (self, key)
-        return value
-
-    def append(self, elem):
-        self._last_key[0][self._last_key[1]] = [elem]
-
-    def extend(self, elem):
-        self._last_key[0][self._last_key[1]] = elem
-
-    def __iadd__(self, other):
-        value = self._last_key[0][self._last_key[1]] = other
-        return value
-
-
-class Dict2(dict):
     def __init__(self, *args, parent=None, mkey=None, **kwargs):
         super().__init__(*args, **kwargs)
         self._parent = parent
@@ -96,12 +74,3 @@ class Dict2(dict):
     def __ixor__(self, other):
         value = self._parent[self._key] = other
         return value
-
-m = Dict2()
-m["1"]["2"]["3"] = 9
-m["2"].append(2)
-m["2"].append(3)
-m["1"]["2"]["4"] = {}
-print(m)
-del m["1"]["2"]["3"]
-print(m)
